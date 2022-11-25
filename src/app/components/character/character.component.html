@@ -1,0 +1,27 @@
+<header class="text-center">
+    <h1 class="fw-bold">RICK AND MORTY APP</h1>
+    <p>Detalle del personaje</p>
+</header>
+<div class="container ">
+    <div class="card">
+        <div class="row">
+            <div class="col-8">
+                <img [src]="character.image" class="card-img-top" [alt]="character.name">
+            </div>
+            <div class="col-4 p-5">
+                <h5 class="card-title fw-bold">Nombre: {{character.name}}</h5>
+                <div class="card-body">
+                    <p class="card-text">Genero: {{character.gender}}</p>
+                    <p class="card-text">Especie: {{character.species}}</p>
+                    <p class="card-text">Estado: {{character.status}}</p>
+                    <p class="card-text">Fecha de creacion: {{character.created | date}}</p>
+                    <p class="card-text">Planeta de origen: {{character.origin.name}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h4 class="m-4">Episodios donde aparece</h4>
+    <ul *ngFor="let episode of character.episode; let i = index" class="list-group">
+        <li class="list-group-item">Episodio: {{i + 1}}</li>
+    </ul>
+</div>
